@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ApexSaaS AI — Autonomous Multi-Agent SaaS Company</title>
-  <meta name="description" content="Autonomous AI Agent SaaS Company powered by Paperclip AI, Hermes 3, and DSH Web agents. Designing, building, and deploying micro-SaaS products 24/7 with zero human intervention.">
+  <title>ApexSaaS — Build & Deploy Live Apps in Seconds with AI</title>
+  <meta name="description" content="Turn any idea into a live, working web application in seconds. Zero coding required. Automated design, free cloud PostgreSQL database, and one-click autonomous deployment.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
   
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
+  <!-- Supabase Cloud Database Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
@@ -30,71 +33,25 @@
             </svg>
           </div>
           <div class="brand-title">
-            <span>ApexSaaS AI</span>
-            <span class="brand-badge">Autonomous Swarm</span>
+            <span>ApexSaaS</span>
+            <span class="brand-badge">AI App Studio</span>
           </div>
         </div>
 
         <!-- Navigation Tabs -->
-        <nav class="main-nav" aria-label="Main Navigation">
-          <a href="#overview" class="nav-link active">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-            </svg>
-            Overview
-          </a>
-          <a href="#org-chart" class="nav-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-            Agent Workforce
-          </a>
-          <a href="#pipeline" class="nav-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="3" width="7" height="7"></rect>
-              <rect x="14" y="3" width="7" height="7"></rect>
-              <rect x="14" y="14" width="7" height="7"></rect>
-              <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            SaaS Pipeline
-          </a>
-          <a href="#terminal" class="nav-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="4 17 10 11 4 5"></polyline>
-              <line x1="12" y1="19" x2="20" y2="19"></line>
-            </svg>
-            Live Terminal
-          </a>
-          <a href="#generator" class="nav-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-            Generator Sandbox
-          </a>
+        <nav class="main-nav">
+          <a href="#generator" class="nav-link active">App Builder</a>
+          <a href="#use-cases" class="nav-link">Use Cases</a>
+          <a href="#cloud-db" class="nav-link">Cloud Database</a>
+          <a href="#pricing" class="nav-link">Pricing</a>
+          <a href="#faq" class="nav-link">FAQ</a>
         </nav>
 
-        <!-- Header Actions -->
-        <div class="header-actions">
-          <div class="status-indicator-live">
-            <span class="live-dot"></span>
-            <span>Swarm: 4/4 Active</span>
-          </div>
-
-          <button class="cmd-k-trigger" id="cmd-k-btn" title="Open Quick Command Palette (Cmd+K)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <span>Search</span>
-            <span class="cmd-k-kbd">⌘K</span>
-          </button>
-
-          <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
-            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <!-- Right Header Controls -->
+        <div class="header-controls">
+          <!-- Apple Theme Switcher -->
+          <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light/Dark Theme" title="Switch Theme">
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -105,32 +62,37 @@
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
+
+          <!-- User Authentication Section (Dynamic via JS) -->
+          <div id="header-auth-section" style="display:flex; align-items:center; gap:8px; position:relative;">
+            <!-- Injected by js/app.js -->
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Main Content Flow -->
     <main class="main-content">
 
       <!-- Hero Section -->
-      <section class="hero-section" id="overview">
+      <section class="hero-section">
         <div class="apple-intelligence-glow" aria-hidden="true"></div>
 
         <div class="hero-pill">
-          <span class="hero-pill-badge">v3.4.0 Swarm</span>
-          <span>Zero Human Overhead &bull; Pure Autonomous Velocity</span>
+          <span class="hero-pill-badge">⚡ Free Cloud Database</span>
+          <span>Zero Coding Required &bull; Launch in Under 60 Seconds</span>
         </div>
 
         <h1 class="hero-title">
-          The Autonomous AI SaaS Company That Never Sleeps.
+          Turn Any Idea Into a Live Working App in Seconds.
         </h1>
 
         <p class="hero-subtitle">
-          ApexSaaS AI operates a persistent swarm of specialized executive agents: <strong>Paperclip AI</strong> balances token treasuries, <strong>Hermes 3</strong> engineers protocols, and <strong>DSH Web Agents</strong> synthesize frontend runtimes and compiler proofs.
+          Just describe what you need. ApexSaaS automatically designs your pages, provisions a <strong>free cloud PostgreSQL database</strong>, and deploys your custom app live with a public link — completely hands-free.
         </p>
 
         <div class="hero-cta-group">
@@ -138,10 +100,10 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
-            Launch Autonomous Generator
+            Create Your App Free
           </a>
-          <a href="#terminal" class="btn btn-secondary btn-lg">
-            <span>Watch Live Stream</span>
+          <a href="#use-cases" class="btn btn-secondary btn-lg">
+            <span>Explore Examples</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px;">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
@@ -152,349 +114,157 @@
         <div class="telemetry-ticker">
           <div class="stat-card">
             <div class="stat-header">
-              <span class="stat-label">Autonomous Commits</span>
+              <span class="stat-label">Live Apps Deployed</span>
               <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="4"></circle>
-                <line x1="1.05" y1="12" x2="7" y2="12"></line>
-                <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
-              </svg>
-            </div>
-            <div class="stat-value" id="stat-commits-val">1,352</div>
-            <div class="stat-subtext">
-              <span class="stat-trend-up">&uarr; 38 commits</span>
-              <span>last 2 hours</span>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-header">
-              <span class="stat-label">Active Micro-SaaS</span>
-              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-              </svg>
-            </div>
-            <div class="stat-value" id="stat-saas-val">3 Live <span style="font-size:0.9rem; color:var(--text-tertiary);">+ 1 queued</span></div>
-            <div class="stat-subtext">
-              <span class="stat-trend-up">&uarr; 100%</span>
-              <span>uptime SLA</span>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-header">
-              <span class="stat-label">Annual Recurring Rev</span>
-              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
-            </div>
-            <div class="stat-value" id="stat-arr-val">$184,700</div>
-            <div class="stat-subtext">
-              <span class="stat-trend-up">&uarr; 18.4%</span>
-              <span>MoM organic</span>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-header">
-              <span class="stat-label">Token Compute Margin</span>
-              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
-            </div>
-            <div class="stat-value" id="stat-margin-val">98.6%</div>
-            <div class="stat-subtext">
-              <span class="stat-trend-up">$0.003</span>
-              <span>cost per unit</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Company Overview Pillars -->
-      <section class="content-section">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <span class="section-eyebrow">
-              <span class="live-dot" style="width:6px; height:6px;"></span>
-              Autonomous Agency Protocol
-            </span>
-            <h2 class="section-title">How ApexSaaS AI Ships Software</h2>
-          </div>
-          <p class="section-desc">
-            A self-contained synthetic organization where software development, product discovery, and QA testing are transformed into continuous mathematical state loops.
-          </p>
-        </div>
-
-        <div class="feature-bento-grid">
-          <div class="feature-bento-card">
-            <div class="feature-icon-squircle" style="background:rgba(255, 55, 95, 0.14); color:var(--agent-paperclip);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
                 <circle cx="12" cy="12" r="10"></circle>
-                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
-                <line x1="12" y1="6" x2="12" y2="18"></line>
+                <polyline points="12 6 12 12 14 14"></polyline>
               </svg>
             </div>
-            <h3>1. Market Scoring & PRD</h3>
-            <p>
-              Paperclip AI continuously monitors developer APIs, SaaS churn signals, and unserved compliance niches, producing complete PRDs with quantifiable pricing models in minutes.
-            </p>
+            <div class="stat-value" id="stat-commits-val">1,420</div>
+            <span class="stat-trend positive">&uarr; 34 launched today</span>
           </div>
 
-          <div class="feature-bento-card">
-            <div class="feature-icon-squircle" style="background:rgba(100, 210, 255, 0.14); color:var(--agent-hermes);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Happy Creators</span>
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </div>
-            <h3>2. Protocol & Architecture</h3>
-            <p>
-              Hermes 3 translates PRDs into sub-5ms edge architecture, OpenAPI 3.1 specifications, database schemas, and tool calling definitions across multi-agent boundaries.
-            </p>
+            <div class="stat-value" id="stat-users-val">38,500</div>
+            <span class="stat-trend positive">&uarr; 99.4% satisfaction</span>
           </div>
 
-          <div class="feature-bento-card">
-            <div class="feature-icon-squircle" style="background:rgba(48, 209, 88, 0.14); color:var(--agent-dsh-qa);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <polyline points="9 12 11 14 15 10"></polyline>
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Cloud Database</span>
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
               </svg>
             </div>
-            <h3>3. Synthesis & QA Gatekeeper</h3>
-            <p>
-              DSH Browser & PyLang write reactive UI and async services, while DSH Compiler & OS enforce zero-vulnerability AST proofs before deploying to edge clusters.
-            </p>
+            <div class="stat-value" style="color:var(--agent-dsh-qa);">Free Cloud DB</div>
+            <span class="stat-trend positive">Supabase PostgreSQL 🟢</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Average Build Time</span>
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="stat-value">38s</div>
+            <span class="stat-trend positive">Instant Live Preview</span>
           </div>
         </div>
       </section>
 
-      <!-- Section: Agent Org Chart & Workforce -->
-      <section class="content-section" id="org-chart">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <span class="section-eyebrow">Autonomous Workforce</span>
-            <h2 class="section-title">The Synthetic Executive Team</h2>
-          </div>
-          <p class="section-desc">
-            Four specialized agents collaborate autonomously via standardized tool calls and cognitive memory protocols. Click on any agent card to inspect their live neural dossier.
-          </p>
-        </div>
-
-        <div class="org-chart-wrapper">
-          <div class="agent-grid" id="agent-grid-container">
-            <!-- Dynamically populated by js/org-chart.js -->
-          </div>
-
-          <!-- Expanded Dossier Drawer -->
-          <div class="agent-dossier-drawer" id="agent-dossier-drawer"></div>
-        </div>
-      </section>
-
-      <!-- Section: Active SaaS Projects Kanban Pipeline -->
-      <section class="content-section" id="pipeline">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <span class="section-eyebrow">Continuous Shipping</span>
-            <h2 class="section-title">Active SaaS Pipeline</h2>
-          </div>
-          <p class="section-desc">
-            Autonomous projects progressing through lifecycle stages from Market Fit to Global Edge Staging. Click any card for architecture blueprints and telemetry.
-          </p>
-        </div>
-
-        <div class="pipeline-container">
-          <div class="pipeline-toolbar">
-            <div class="pipeline-filter-tabs">
-              <button class="pipeline-tab-btn active" data-cat="all">All Products (3)</button>
-              <button class="pipeline-tab-btn" data-cat="Enterprise">Enterprise AI</button>
-              <button class="pipeline-tab-btn" data-cat="Developer">Developer Tooling</button>
-              <button class="pipeline-tab-btn" data-cat="Conversion">Conversion</button>
-            </div>
-
-            <div class="pipeline-stats-pill">
-              <span>Sprint Velocity: <strong>4.2 PRs / day</strong></span>
-              <span>&bull;</span>
-              <span>Human Overhead: <strong>$0.00</strong></span>
-            </div>
-          </div>
-
-          <!-- Kanban Board -->
-          <div class="kanban-board" id="kanban-board">
-            <!-- Dynamically populated by js/pipeline.js -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: Live Agent Activity Terminal Stream -->
-      <section class="content-section" id="terminal">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <span class="section-eyebrow">Real-Time Telemetry</span>
-            <h2 class="section-title">Live Agent Activity Terminal</h2>
-          </div>
-          <p class="section-desc">
-            Unfiltered stream of agent operations: tool invocations, PRD approvals, compiler checks, and edge deployments happening in real-time.
-          </p>
-        </div>
-
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="terminal-left-controls">
-              <div class="terminal-window-dots">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-              </div>
-              <div class="terminal-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
-                  <polyline points="4 17 10 11 4 5"></polyline>
-                  <line x1="12" y1="19" x2="20" y2="19"></line>
-                </svg>
-                <span>apex-agent-stream // tty-0</span>
-              </div>
-            </div>
-
-            <!-- Agent Filters -->
-            <div class="terminal-filters">
-              <button class="term-filter-btn active" data-filter="all">All Logs</button>
-              <button class="term-filter-btn" data-filter="paperclip">Paperclip</button>
-              <button class="term-filter-btn" data-filter="hermes">Hermes</button>
-              <button class="term-filter-btn" data-filter="dsh-dev">DSH Dev</button>
-              <button class="term-filter-btn" data-filter="dsh-qa">DSH QA</button>
-            </div>
-
-            <!-- Terminal Actions -->
-            <div class="terminal-actions">
-              <button class="btn btn-sm btn-secondary" id="term-pause-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
-                  <rect x="6" y="4" width="4" height="16"></rect>
-                  <rect x="14" y="4" width="4" height="16"></rect>
-                </svg>
-                Pause
-              </button>
-              <button class="btn btn-sm btn-outline" id="term-speed-btn">1x</button>
-              <button class="btn btn-sm btn-ghost" id="term-clear-btn" title="Clear terminal">Clear</button>
-              <button class="btn btn-sm btn-ghost" id="term-scroll-toggle" title="Toggle Auto-scroll">Scroll</button>
-            </div>
-          </div>
-
-          <!-- Monospace Terminal Log Body -->
-          <div class="terminal-body" id="terminal-body">
-            <!-- Dynamically populated by js/terminal.js -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: Interactive SaaS Generator Sandbox -->
+      <!-- Section: Interactive App Builder Sandbox -->
       <section class="content-section" id="generator">
         <div class="section-header">
-          <div class="section-title-wrap">
-            <span class="section-eyebrow">Interactive Swarm Studio</span>
-            <h2 class="section-title">Autonomous SaaS Generator</h2>
-          </div>
-          <p class="section-desc">
-            Provide a micro-SaaS concept or select a market template. The agent swarm will collaboratively generate the PRD, architecture, full-stack code, security audit, and a live functional preview mockup.
+          <div class="section-tag">Live Sandbox</div>
+          <h2 class="section-title">Describe Your Idea, Watch It Come to Life</h2>
+          <p class="section-description">
+            Pick a popular business template below or type your own custom concept. Click "Generate App" to test it interactively.
           </p>
         </div>
 
         <div class="sandbox-card">
-          <!-- Input Form Section -->
-          <div class="sandbox-form-section">
-            <div class="preset-ideas-row">
-              <span class="preset-label">Templates:</span>
-              <div id="preset-ideas-container" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+          <!-- Preset Inspirations -->
+          <div class="preset-ideas-bar">
+            <span class="preset-label">Popular Templates:</span>
+            <div class="preset-pills" id="preset-ideas-container">
+              <!-- Injected by js/generator.js -->
+            </div>
+          </div>
+
+          <!-- Input Fields Grid -->
+          <div class="sandbox-input-grid">
+            <div class="field-group-hero">
+              <label class="field-label" for="gen-app-idea">
+                <span>What do you want to build?</span>
+              </label>
+              <textarea 
+                id="gen-app-idea" 
+                class="field-textarea" 
+                rows="3" 
+                placeholder="e.g. An online booking system for yoga classes with weekly schedule, student signups, and automated email confirmations...">Online appointment scheduling for fitness trainers with class calendar and automated client reminders</textarea>
             </div>
 
-            <div class="sandbox-input-grid">
-              <div class="input-field-group">
-                <label class="field-label" for="gen-app-idea">
-                  Micro-SaaS Concept & Problem Statement
-                  <span class="field-label-hint">What should the swarm build?</span>
-                </label>
-                <input 
-                  type="text" 
-                  id="gen-app-idea" 
-                  class="field-input" 
-                  placeholder="e.g. Autonomous vectorless legal contract & compliance checker for SOC-2 audits"
-                />
-              </div>
-
-              <div class="input-field-group">
-                <label class="field-label" for="gen-tech-stack">Target Tech Stack</label>
+            <div class="field-controls-col">
+              <div class="field-group">
+                <label class="field-label" for="gen-tech-stack">App Category</label>
                 <select id="gen-tech-stack" class="field-select">
-                  <option value="next-fastapi">Next.js 15 + FastAPI (Python) + DuckDB</option>
-                  <option value="svelte-cf">SvelteKit + Cloudflare Workers + D1 SQLite</option>
-                  <option value="react-fastify">React 19 + Fastify (Node.js) + PostgreSQL</option>
-                  <option value="vue-hono">Vue 3 + Hono + ClickHouse Edge</option>
+                  <option value="Booking & Appointments">Booking & Appointments</option>
+                  <option value="Finance & Invoicing">Finance & Invoicing</option>
+                  <option value="Customer Feedback">Customer Feedback</option>
+                  <option value="Restaurants & Cafes">Restaurants & Cafes</option>
+                  <option value="E-Commerce Store">E-Commerce Store</option>
+                  <option value="Community & Membership">Community & Membership</option>
                 </select>
               </div>
 
-              <div class="input-field-group">
-                <label class="field-label" for="gen-monetization">Monetization Model</label>
-                <select id="gen-monetization" class="field-select">
-                  <option value="tiered">Tiered Subscription ($29 / $99 / $299)</option>
-                  <option value="metered">Usage-Based Metered API ($0.002 / unit)</option>
-                  <option value="freemium">Freemium + Add-on Licenses</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="generator-action-row">
-              <div class="swarm-state-indicator">
-                <span class="live-dot" style="background:var(--agent-hermes);"></span>
-                <span>Swarm Readiness: 4/4 Specialized Agents Idle & Ready</span>
+              <div class="field-group">
+                <label class="field-label">Cloud Database</label>
+                <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:var(--bg-surface-3); border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <span style="font-size:0.85rem; font-weight:600; color:var(--text-primary);">Supabase PostgreSQL</span>
+                  <span class="badge badge-emerald" style="margin-left:auto;">Free Tier</span>
+                </div>
               </div>
 
-              <button class="btn btn-primary btn-lg" id="btn-generate-saas">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <button class="btn btn-primary btn-block" id="btn-generate-saas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px; height:16px;">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
-                Autonomously Deploy Swarm
+                Generate App Preview
               </button>
             </div>
           </div>
 
-          <!-- Multi-Step Pipeline Stepper (Visible during/after generation) -->
+          <!-- Generation Progress Stepper -->
           <div class="generation-stepper" id="generation-stepper">
-            <div class="step-card" data-step="1">
+            <div class="step-card completed" data-step="1">
               <span class="step-num">1</span>
               <div class="step-info">
-                <span class="step-name">Product PRD</span>
-                <span class="step-agent">Paperclip AI</span>
+                <span class="step-name">Understand Idea</span>
+                <span class="step-agent">Idea Analysis</span>
               </div>
             </div>
 
-            <div class="step-card" data-step="2">
+            <div class="step-card completed" data-step="2">
               <span class="step-num">2</span>
               <div class="step-info">
-                <span class="step-name">Architecture</span>
-                <span class="step-agent">Hermes 3</span>
+                <span class="step-name">Design Layout</span>
+                <span class="step-agent">UI System</span>
               </div>
             </div>
 
-            <div class="step-card" data-step="3">
+            <div class="step-card completed" data-step="3">
               <span class="step-num">3</span>
               <div class="step-info">
-                <span class="step-name">Full-Stack Code</span>
-                <span class="step-agent">DSH Dev</span>
+                <span class="step-name">Write Code</span>
+                <span class="step-agent">Frontend & Logic</span>
               </div>
             </div>
 
-            <div class="step-card" data-step="4">
+            <div class="step-card completed" data-step="4">
               <span class="step-num">4</span>
               <div class="step-info">
-                <span class="step-name">Security & QA</span>
-                <span class="step-agent">DSH QA</span>
+                <span class="step-name">Cloud Database</span>
+                <span class="step-agent">PostgreSQL Setup</span>
               </div>
             </div>
 
-            <div class="step-card" data-step="5">
+            <div class="step-card completed" data-step="5">
               <span class="step-num">5</span>
               <div class="step-info">
-                <span class="step-name">Live Preview</span>
-                <span class="step-agent">Interactive Sandbox</span>
+                <span class="step-name">Ready to Deploy</span>
+                <span class="step-agent">Autonomous Launch</span>
               </div>
             </div>
           </div>
@@ -508,56 +278,291 @@
                     <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                     <line x1="8" y1="21" x2="16" y2="21"></line>
                   </svg>
-                  Interactive Live Mockup
-                </button>
-                <button class="output-tab-btn" data-tab="prd">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-paperclip);">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                  </svg>
-                  PRD & Pricing
-                </button>
-                <button class="output-tab-btn" data-tab="arch">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-hermes);">
-                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  </svg>
-                  System Architecture
-                </button>
-                <button class="output-tab-btn" data-tab="code">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-dsh-dev);">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                  Production Code
-                </button>
-                <button class="output-tab-btn" data-tab="qa">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-dsh-qa);">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
-                  Security Audit (100%)
+                  Interactive Live Preview
                 </button>
               </div>
 
-              <div class="output-actions-list">
-                <button class="btn btn-sm btn-secondary" id="btn-export-spec">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                  Export Package (JSON)
+              <div class="output-actions">
+                <button class="btn btn-primary" id="btn-main-deploy">
+                  🚀 Deploy App to Cloud
                 </button>
               </div>
             </div>
 
-            <div class="output-panel-content">
-              <div class="output-tab-pane active" id="pane-mockup">
-                <!-- Dynamically populated by js/generator.js -->
+            <!-- Tab Pane: Interactive Live Mockup -->
+            <div class="output-tab-pane active" id="pane-mockup">
+              <!-- Rendered dynamically by js/generator.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Built for Every Creator & Business (Use Cases) -->
+      <section class="content-section" id="use-cases">
+        <div class="section-header">
+          <div class="section-tag">Solutions for Everyone</div>
+          <h2 class="section-title">What Can You Build with ApexSaaS?</h2>
+          <p class="section-description">
+            Whether you run a local service, a fitness studio, or a freelance business, you can launch custom software in minutes without writing a single line of code.
+          </p>
+        </div>
+
+        <div class="use-case-grid">
+          <div class="use-case-card">
+            <div class="use-case-icon" style="background:rgba(0, 113, 227, 0.12); color:var(--accent-primary);">
+              📅
+            </div>
+            <h3 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;">Booking & Scheduling</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">
+              Allow clients to book appointments, select time slots, and receive automated reminders. Perfect for trainers, therapists, and stylists.
+            </p>
+          </div>
+
+          <div class="use-case-card">
+            <div class="use-case-icon" style="background:rgba(48, 209, 88, 0.12); color:var(--agent-dsh-qa);">
+              💳
+            </div>
+            <h3 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;">Invoicing & Payments</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">
+              Generate branded professional invoices, collect payments instantly via Stripe links, and track outstanding balances automatically.
+            </p>
+          </div>
+
+          <div class="use-case-card">
+            <div class="use-case-icon" style="background:rgba(255, 159, 10, 0.12); color:var(--accent-hover);">
+              💬
+            </div>
+            <h3 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;">Feedback & Portals</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">
+              Build customer suggestion boards, public feature roadmaps, and client review collectors with zero technical setup.
+            </p>
+          </div>
+
+          <div class="use-case-card">
+            <div class="use-case-icon" style="background:rgba(175, 82, 222, 0.12); color:var(--agent-paperclip);">
+              📱
+            </div>
+            <h3 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;">QR Menus & Catalogs</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">
+              Launch contactless digital restaurant menus, product catalogs, and direct inquiry forms for local retail shops and cafes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Cloud Database (Supabase PostgreSQL Free Tier) -->
+      <section class="content-section" id="cloud-db">
+        <div class="feature-bento-grid" style="grid-template-columns: 1fr 1fr; align-items:center;">
+          <div>
+            <div class="section-tag">Zero Configuration Storage</div>
+            <h2 class="section-title" style="text-align:left; font-size:2rem; margin-top:10px;">
+              Free Cloud Database Included With Every App.
+            </h2>
+            <p style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6; margin:16px 0 24px 0;">
+              Every app you build comes pre-wired with a free <strong>Supabase PostgreSQL</strong> cloud database. Your user signups, bookings, and form responses are securely stored in the cloud with automated SSL encryption.
+            </p>
+            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:12px;">
+              <li style="display:flex; align-items:center; gap:10px; font-size:0.92rem; color:var(--text-primary);">
+                <span style="color:var(--agent-dsh-qa); font-weight:700;">&check;</span>
+                <strong>500MB Free PostgreSQL Storage</strong> &mdash; More than enough for thousands of customer entries.
+              </li>
+              <li style="display:flex; align-items:center; gap:10px; font-size:0.92rem; color:var(--text-primary);">
+                <span style="color:var(--agent-dsh-qa); font-weight:700;">&check;</span>
+                <strong>End-to-End SSL Encryption</strong> &mdash; Bank-grade security for your customer data.
+              </li>
+              <li style="display:flex; align-items:center; gap:10px; font-size:0.92rem; color:var(--text-primary);">
+                <span style="color:var(--agent-dsh-qa); font-weight:700;">&check;</span>
+                <strong>Bring Your Own Database</strong> &mdash; Plug in your own custom Supabase project anytime.
+              </li>
+            </ul>
+            <div style="margin-top:24px;">
+              <button class="btn btn-secondary" onclick="window.openCloudDbModal()">
+                ☁️ Configure Cloud Database Settings
+              </button>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-surface-2); border:1px solid var(--border-medium); border-radius:var(--radius-xl); padding:28px; box-shadow:var(--shadow-floating);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <span style="font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--text-tertiary); letter-spacing:0.05em;">Cloud Database Health</span>
+              <span class="badge badge-emerald">Connected 🟢</span>
+            </div>
+            
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="background:var(--bg-surface-3); padding:14px; border-radius:var(--radius-md); display:flex; justify-content:space-between;">
+                <span style="color:var(--text-secondary); font-size:0.85rem;">Engine</span>
+                <strong style="color:var(--text-primary); font-size:0.85rem;">PostgreSQL 15</strong>
               </div>
-              <div class="output-tab-pane" id="pane-prd"></div>
-              <div class="output-tab-pane" id="pane-arch"></div>
-              <div class="output-tab-pane" id="pane-code"></div>
-              <div class="output-tab-pane" id="pane-qa"></div>
+              <div style="background:var(--bg-surface-3); padding:14px; border-radius:var(--radius-md); display:flex; justify-content:space-between;">
+                <span style="color:var(--text-secondary); font-size:0.85rem;">Cloud Host</span>
+                <strong style="color:var(--text-primary); font-size:0.85rem;">Supabase AWS Cloud</strong>
+              </div>
+              <div style="background:var(--bg-surface-3); padding:14px; border-radius:var(--radius-md); display:flex; justify-content:space-between;">
+                <span style="color:var(--text-secondary); font-size:0.85rem;">Real-Time Sync</span>
+                <span style="color:var(--agent-dsh-qa); font-weight:600; font-size:0.85rem;">Sub-10ms Latency</span>
+              </div>
+              <div style="background:var(--bg-surface-3); padding:14px; border-radius:var(--radius-md); display:flex; justify-content:space-between;">
+                <span style="color:var(--text-secondary); font-size:0.85rem;">Cost to You</span>
+                <strong style="color:var(--agent-dsh-qa); font-size:0.85rem;">/bin/bash.00 / month (Free Tier)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Transparent Pricing -->
+      <section class="content-section" id="pricing">
+        <div class="section-header">
+          <div class="section-tag">Simple Pricing</div>
+          <h2 class="section-title">Start for Free, Scale as You Grow</h2>
+          <p class="section-description">
+            No hidden costs. Every plan includes autonomous app deployment and cloud database storage.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Free Plan -->
+          <div class="pricing-card">
+            <h3 style="font-size:1.25rem; font-weight:700; color:var(--text-primary);">Starter Free</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">For individuals launching their first idea.</p>
+            <div class="pricing-price">/bin/bash <span>/ forever</span></div>
+            
+            <ul class="pricing-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Up to 3 Live Deployed Apps
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Free Cloud PostgreSQL Database
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Instant Live App Previews
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Standard Community Support
+              </li>
+            </ul>
+
+            <button class="btn btn-outline btn-block" onclick="window.openAuthModal('Sign up for the Free Plan to start building.')">
+              Get Started Free
+            </button>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="pricing-card featured">
+            <div class="pricing-pill">Most Popular</div>
+            <h3 style="font-size:1.25rem; font-weight:700; color:var(--text-primary);">Pro Creator</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">For freelancers and active founders.</p>
+            <div class="pricing-price">9 <span>/ month</span></div>
+
+            <ul class="pricing-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Unlimited Live Deployed Apps
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Connect Your Custom Domain (.com)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Unlimited Cloud Database Requests
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Remove ApexSaaS Branding
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Priority 24/7 Support
+              </li>
+            </ul>
+
+            <button class="btn btn-primary btn-block" onclick="window.openAuthModal('Create an account to start your Pro Creator trial.')">
+              Start 14-Day Free Trial
+            </button>
+          </div>
+
+          <!-- Business Plan -->
+          <div class="pricing-card">
+            <h3 style="font-size:1.25rem; font-weight:700; color:var(--text-primary);">Scale Business</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">For growing businesses and agencies.</p>
+            <div class="pricing-price">9 <span>/ month</span></div>
+
+            <ul class="pricing-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Everything in Pro Creator
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Up to 10 Team Member Seats
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Dedicated High-Speed Database Instance
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Automated Daily Database Backups
+              </li>
+            </ul>
+
+            <button class="btn btn-outline btn-block" onclick="window.openAuthModal('Create an account for your Business team.')">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Frequently Asked Questions -->
+      <section class="content-section" id="faq">
+        <div class="section-header">
+          <div class="section-tag">Got Questions?</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Do I need to know how to code to use ApexSaaS?</span>
+              <span>&darr;</span>
+            </div>
+            <div class="faq-answer">
+              Not at all! You simply describe what you want in plain English. The AI creates the interface, buttons, forms, and connects the cloud database automatically.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Is the cloud database really free?</span>
+              <span>&darr;</span>
+            </div>
+            <div class="faq-answer">
+              Yes! Every deployed app gets connected to a free Supabase PostgreSQL cloud instance with 500MB of storage and SSL security included at zero cost.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Why do I need to create an account before deploying?</span>
+              <span>&darr;</span>
+            </div>
+            <div class="faq-answer">
+              Your account links your deployed app to your private cloud database so that only you can access your customer entries, update your settings, or manage your live domain.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can I use my own custom domain?</span>
+              <span>&darr;</span>
+            </div>
+            <div class="faq-answer">
+              Yes, with the Pro Creator plan you can attach any custom domain (e.g. www.yourbusiness.com) with automatic HTTPS certificates provided.
             </div>
           </div>
         </div>
@@ -568,74 +573,109 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="footer-top">
-          <div class="footer-brand-info">
-            <div class="brand-wrapper">
-              <div class="brand-logo-mark">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-              </div>
-              <div class="brand-title">
-                <span>ApexSaaS AI</span>
-              </div>
-            </div>
-            <p class="footer-tagline">
-              First autonomous AI SaaS enterprise operating on zero human intervention. Real products, real revenue, continuous regression-proof deployment.
-            </p>
-          </div>
-
-          <div class="footer-tech-stack">
-            <div class="footer-tech-item">
-              <span class="footer-tech-dot" style="background:var(--agent-paperclip);"></span>
-              <span>Paperclip AI</span>
-            </div>
-            <div class="footer-tech-item">
-              <span class="footer-tech-dot" style="background:var(--agent-hermes);"></span>
-              <span>Hermes 3</span>
-            </div>
-            <div class="footer-tech-item">
-              <span class="footer-tech-dot" style="background:var(--agent-dsh-dev);"></span>
-              <span>DSH Browser / PyLang</span>
-            </div>
-            <div class="footer-tech-item">
-              <span class="footer-tech-dot" style="background:var(--agent-dsh-qa);"></span>
-              <span>DSH Compiler OS</span>
-            </div>
-          </div>
+        <div class="footer-brand">
+          <div class="brand-title">ApexSaaS AI</div>
+          <p class="footer-desc">The Consumer AI App Studio. Turn any concept into a working, deployed application with a free cloud database.</p>
         </div>
-
-        <div class="footer-bottom">
-          <span>&copy; 2026 ApexSaaS AI Corporation. Autonomous Swarm Protocol v3.4.</span>
-          <span>GitHub Pages Compatible &bull; Zero External Runtime Dependencies</span>
+        <div class="footer-links">
+          <a href="#generator">App Builder</a>
+          <a href="#use-cases">Use Cases</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#cloud-db">Cloud Database</a>
+          <a href="https://github.com/openthot/ai-saas-company" target="_blank">GitHub</a>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 ApexSaaS AI. All rights reserved.</span>
+        <span>Built with Apple HIG &bull; Powered by Free Supabase PostgreSQL</span>
       </div>
     </footer>
 
-    <!-- Project Details Modal Backdrop -->
-    <div class="modal-backdrop" id="project-modal"></div>
-
-    <!-- Command Palette (Cmd+K) Modal -->
-    <div class="modal-backdrop" id="cmd-palette-modal">
-      <div class="modal-dialog cmd-palette-dialog">
-        <input 
-          type="text" 
-          id="cmd-search-input" 
-          class="cmd-search-input" 
-          placeholder="Type a command or jump to section... (Esc to close)"
-        />
-        <div class="cmd-results-list" id="cmd-items-container">
-          <!-- Populated by js/app.js -->
-        </div>
-      </div>
-    </div>
-
-    <!-- Toast Notification Container -->
-    <div class="toast-container" id="toast-container"></div>
-
   </div>
 
-  <!-- Main ES Module Script -->
+  <!-- Global Modal Backdrop -->
+  <div class="modal-backdrop-overlay" id="auth-backdrop"></div>
+
+  <!-- Auth Modal (Sign Up & Sign In) -->
+  <div class="app-modal" id="auth-modal">
+    <div class="modal-header-row">
+      <h3 style="margin:0; font-size:1.25rem; font-weight:700; color:var(--text-primary);" id="auth-modal-title">Create Your Free Account</h3>
+      <button class="modal-close-btn" id="auth-modal-close">&times;</button>
+    </div>
+
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;" id="auth-modal-reason">
+      Autonomous deployment requires a free account to provision your cloud database.
+    </p>
+
+    <div class="auth-tabs-nav">
+      <button class="auth-tab-btn active" id="tab-sign-up">Sign Up</button>
+      <button class="auth-tab-btn" id="tab-sign-in">Sign In</button>
+    </div>
+
+    <form id="auth-form" style="display:flex; flex-direction:column; gap:12px;">
+      <div class="field-group" id="auth-field-name-wrap">
+        <label class="field-label" for="auth-name">Your Name</label>
+        <input type="text" id="auth-name" class="field-input" placeholder="Alex Taylor" value="Alex Taylor">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="auth-email">Email Address</label>
+        <input type="email" id="auth-email" class="field-input" placeholder="alex@example.com" value="alex@example.com" required>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="auth-password">Password</label>
+        <input type="password" id="auth-password" class="field-input" placeholder="••••••••" value="password123" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" id="auth-submit-btn" style="margin-top:6px;">
+        Create Free Account & Deploy
+      </button>
+
+      <div style="text-align:center; margin:8px 0; color:var(--text-tertiary); font-size:0.8rem;">or</div>
+
+      <button type="button" class="btn btn-secondary btn-block" id="btn-quick-demo-auth">
+        ⚡ Quick Demo One-Click Sign In
+      </button>
+    </form>
+  </div>
+
+  <!-- Celebration Modal: Deployment Success -->
+  <div class="app-modal" id="deploy-success-modal" style="max-width:520px;">
+    <div id="deploy-success-body">
+      <!-- Injected by js/app.js -->
+    </div>
+  </div>
+
+  <!-- Cloud Database Settings Modal -->
+  <div class="app-modal" id="cloud-db-modal" style="max-width:540px;">
+    <div class="modal-header-row">
+      <h3 style="margin:0; font-size:1.25rem; font-weight:700; color:var(--text-primary);">Cloud Database Configuration</h3>
+      <button class="modal-close-btn" onclick="document.getElementById('cloud-db-modal').style.display='none'; document.getElementById('auth-backdrop').style.display='none';">&times;</button>
+    </div>
+    <div id="cloud-db-body">
+      <!-- Injected by js/app.js -->
+    </div>
+  </div>
+
+  <!-- Slide-Over Drawer: My Deployed Apps -->
+  <div class="apps-slide-drawer" id="my-apps-drawer">
+    <div class="modal-header-row">
+      <h3 style="margin:0; font-size:1.2rem; font-weight:700; color:var(--text-primary);">My Deployed Apps</h3>
+      <button class="modal-close-btn" id="my-apps-drawer-close">&times;</button>
+    </div>
+    <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px;">
+      All live applications connected to your free cloud PostgreSQL database.
+    </p>
+    <div id="my-apps-list">
+      <!-- Injected by js/app.js -->
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
