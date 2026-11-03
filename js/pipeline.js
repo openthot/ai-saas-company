@@ -105,10 +105,10 @@ export const projectsData = [
 ];
 
 export const stages = [
-  { id: 'ideation', name: '1. Ideation & Market Fit', dotColor: '#ec4899' },
-  { id: 'arch-specs', name: '2. Architecture & Specs', dotColor: '#06b6d4' },
-  { id: 'code-test', name: '3. Code & Automated QA', dotColor: '#8b5cf6' },
-  { id: 'live', name: '4. Staging & Production', dotColor: '#10b981' }
+  { id: 'ideation', name: '1. Ideation & Market Fit', dotColor: '#ff375f' },
+  { id: 'arch-specs', name: '2. Architecture & Specs', dotColor: '#64d2ff' },
+  { id: 'code-test', name: '3. Code & Automated QA', dotColor: '#bf5af2' },
+  { id: 'live', name: '4. Staging & Production', dotColor: '#30d158' }
 ];
 
 export function initPipeline() {
@@ -266,7 +266,7 @@ export function openProjectModal(projectId) {
           <div style="display:flex; flex-direction:column; gap:8px; font-size:0.8rem; font-family:var(--font-mono);">
             <div><span style="color:var(--text-tertiary);">Data Ingestion:</span> <span style="color:var(--text-primary);">${project.architecture.ingestion}</span></div>
             <div><span style="color:var(--text-tertiary);">Query Engine:</span> <span style="color:var(--text-primary);">${project.architecture.indexing}</span></div>
-            <div><span style="color:var(--text-tertiary);">Core Endpoints:</span> <span style="color:#38bdf8;">${project.architecture.apiEndpoints.join(', ')}</span></div>
+            <div><span style="color:var(--text-tertiary);">Core Endpoints:</span> <span style="color:var(--accent-hover);">${project.architecture.apiEndpoints.join(', ')}</span></div>
             <div><span style="color:var(--text-tertiary);">Storage Topology:</span> <span style="color:var(--text-secondary);">${project.architecture.database}</span></div>
           </div>
         </div>
@@ -379,10 +379,10 @@ function getStageBadgeClass(stageId) {
 
 function getAgentColor(agentId) {
   switch (agentId) {
-    case 'paperclip': return '#ec4899';
-    case 'hermes': return '#06b6d4';
-    case 'dsh-dev': return '#8b5cf6';
-    case 'dsh-qa': return '#10b981';
-    default: return '#5e6ad2';
+    case 'paperclip': return '#ff375f';
+    case 'hermes': return '#64d2ff';
+    case 'dsh-dev': return '#bf5af2';
+    case 'dsh-qa': return '#30d158';
+    default: return '#0071e3';
   }
 }

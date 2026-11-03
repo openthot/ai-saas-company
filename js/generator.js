@@ -444,8 +444,8 @@ function renderArchTab(art) {
         <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--agent-dsh-qa);">&bull; Protocol Verified</span>
       </div>
 
-      <div style="background:#090a0e; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:14px; overflow-x:auto;">
-        <pre style="margin:0; font-family:var(--font-mono); font-size:0.75rem; color:#93c5fd; line-height:1.5;">${art.architecture.diagram}</pre>
+      <div style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:var(--radius-squircle); padding:16px; overflow-x:auto;">
+        <pre style="margin:0; font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-hover); line-height:1.5;">${art.architecture.diagram}</pre>
       </div>
 
       <div>
@@ -598,13 +598,13 @@ function renderMockupTab(art) {
 
       <div class="mockup-viewport-area">
         <!-- Interactive Simulated App Inside Frame -->
-        <div style="background:#0f1013; border:1px solid var(--border-medium); border-radius:var(--radius-lg); padding:20px; display:flex; flex-direction:column; gap:18px;">
+        <div style="background:var(--bg-surface-2); border:1px solid var(--border-medium); border-radius:var(--radius-squircle); padding:20px; display:flex; flex-direction:column; gap:18px; box-shadow:var(--specular-rim);">
           <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:12px;">
             <div style="display:flex; align-items:center; gap:10px;">
-              <div style="width:28px; height:28px; border-radius:6px; background:linear-gradient(135deg, #6366f1, #06b6d4); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:0.8rem;">
+              <div style="width:28px; height:28px; border-radius:var(--radius-sm); background:var(--apple-aura-gradient); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:0.8rem;">
                 ${art.name.charAt(0)}
               </div>
-              <span style="font-weight:600; font-size:1rem; color:#fff;">${art.name}</span>
+              <span style="font-weight:600; font-size:1rem; color:var(--text-primary);">${art.name}</span>
             </div>
             <div style="display:flex; gap:6px;">
               <button class="mock-nav-btn active" id="mock-tab-dashboard">Console</button>
@@ -623,21 +623,21 @@ function renderMockupTab(art) {
                   type="text" 
                   id="mock-user-query" 
                   class="field-input" 
-                  style="flex:1; background:#18191e; border-color:var(--border-medium);" 
+                  style="flex:1; background:var(--bg-surface-3); border-color:var(--border-medium);" 
                   placeholder="Test live query or compliance term..." 
-                  value="Verify customer agreement clause 14.2"
+                  value="GDPR cross-border latency"
                 />
-                <button class="btn btn-primary btn-sm" id="mock-btn-run">
-                  Execute Query
+                <button class="btn btn-primary" id="mock-btn-run" style="padding:0 16px;">
+                  Query API
                 </button>
               </div>
 
-              <!-- Live Execution Output Box -->
-              <div id="mock-query-result" style="background:#090a0d; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:14px; font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; min-height:80px;">
-                <div style="color:var(--text-tertiary);">Ready. Click "Execute Query" above to test autonomous sub-millisecond response.</div>
+              <div id="mock-query-result" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:var(--radius-squircle-sm); padding:14px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-secondary); min-height:80px;">
+                Ready. Click "Query API" to test live Edge KV routing.
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -719,8 +719,8 @@ function setupMockupInteractivity(art) {
       innerContent.innerHTML = `
         <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
           ${art.prd.pricingTiers.map(t => `
-            <div style="background:#14151a; border:1px solid var(--border-subtle); padding:12px; border-radius:6px;">
-              <div style="font-weight:600; color:#fff; font-size:0.8rem;">${t.name}</div>
+            <div style="background:var(--bg-surface-2); border:1px solid var(--border-subtle); padding:14px; border-radius:var(--radius-squircle-sm);">
+              <div style="font-weight:600; color:var(--text-primary); font-size:0.82rem;">${t.name}</div>
               <div style="font-family:var(--font-mono); font-size:1.1rem; color:var(--accent-hover); margin-top:2px;">${t.price}</div>
               <button class="btn btn-sm btn-outline" style="width:100%; margin-top:8px; font-size:0.7rem;">Subscribe</button>
             </div>

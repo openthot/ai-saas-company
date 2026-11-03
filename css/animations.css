@@ -1,35 +1,64 @@
-/* ApexSaaS AI - Animations & Keyframes */
+/* ==========================================================================
+   ApexSaaS AI — Apple Animations & Micro-interactions
+   Subtle springs, liquid glass fading, and Apple Intelligence breathing.
+   ========================================================================== */
 
+/* Apple Intelligence Organic Aura Pulse */
+@keyframes apple-glow-pulse {
+  0% {
+    transform: translate(-50%, -10px) scale(0.96);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, 10px) scale(1.04);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-50%, -10px) scale(0.96);
+    opacity: 0.7;
+  }
+}
+
+/* Apple System Status Dot Pulse */
 @keyframes pulse-dot {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 6px rgba(48, 209, 88, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0);
   }
 }
 
+/* Apple Cyan Pulse */
 @keyframes pulse-agent-cyan {
-  0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6); }
-  70% { box-shadow: 0 0 0 6px rgba(6, 182, 212, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(100, 210, 255, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(100, 210, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(100, 210, 255, 0); }
 }
 
+/* Apple Smooth Fade In */
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
+/* Terminal Log Line Stream In */
 @keyframes fade-in-line {
   from {
     opacity: 0;
-    transform: translateY(3px);
+    transform: translateY(2px);
   }
   to {
     opacity: 1;
@@ -37,10 +66,11 @@
   }
 }
 
+/* Apple Sheet Slide Down */
 @keyframes slide-down {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
@@ -48,10 +78,11 @@
   }
 }
 
+/* Apple Dynamic Island / Toast Pop */
 @keyframes toast-in {
   from {
     opacity: 0;
-    transform: translateY(12px) scale(0.96);
+    transform: translateY(16px) scale(0.95);
   }
   to {
     opacity: 1;
@@ -59,11 +90,13 @@
   }
 }
 
+/* Subtle Shimmer */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
+/* Terminal Cursor Blink */
 @keyframes cursor-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -73,17 +106,17 @@
   display: inline-block;
   width: 7px;
   height: 14px;
-  background-color: var(--accent-hover);
+  background-color: var(--accent-vibrant);
   vertical-align: middle;
   margin-left: 4px;
   animation: cursor-blink 1s step-end infinite;
 }
 
-/* Glass & Glow highlights */
+/* Apple Accent Glow Utilities */
 .glow-accent {
-  box-shadow: 0 0 20px rgba(94, 106, 210, 0.25);
+  box-shadow: 0 0 24px var(--accent-glow);
 }
 
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+  box-shadow: 0 0 24px rgba(100, 210, 255, 0.25);
 }

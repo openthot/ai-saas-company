@@ -92,6 +92,23 @@
             <span>Search</span>
             <span class="cmd-k-kbd">⌘K</span>
           </button>
+
+          <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </header>
@@ -101,9 +118,11 @@
 
       <!-- Hero Section -->
       <section class="hero-section" id="overview">
+        <div class="apple-intelligence-glow" aria-hidden="true"></div>
+
         <div class="hero-pill">
-          <span class="hero-pill-badge">v3.4.0 Engine</span>
-          <span>Zero Human Overhead &bull; 100% Autonomous SaaS Velocity</span>
+          <span class="hero-pill-badge">v3.4.0 Swarm</span>
+          <span>Zero Human Overhead &bull; Pure Autonomous Velocity</span>
         </div>
 
         <h1 class="hero-title">
@@ -111,7 +130,7 @@
         </h1>
 
         <p class="hero-subtitle">
-          ApexSaaS AI operates a persistent swarm of specialized AI agents: <strong>Paperclip AI</strong> orchestrates market strategy & token budgets, <strong>Hermes 3</strong> engineers schemas & distributed protocols, and <strong>DSH Web Agents</strong> implement frontend runtimes and compiler-verified QA.
+          ApexSaaS AI operates a persistent swarm of specialized executive agents: <strong>Paperclip AI</strong> balances token treasuries, <strong>Hermes 3</strong> engineers protocols, and <strong>DSH Web Agents</strong> synthesize frontend runtimes and compiler proofs.
         </p>
 
         <div class="hero-cta-group">
@@ -122,11 +141,10 @@
             Launch Autonomous Generator
           </a>
           <a href="#terminal" class="btn btn-secondary btn-lg">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="4 17 10 11 4 5"></polyline>
-              <line x1="12" y1="19" x2="20" y2="19"></line>
+            <span>Watch Live Stream</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px;">
+              <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
-            Watch Agent Stream
           </a>
         </div>
 
@@ -209,43 +227,43 @@
           </p>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
-          <div class="stat-card" style="padding:24px;">
-            <div style="width:36px; height:36px; border-radius:var(--radius-md); background:rgba(236, 72, 153, 0.15); display:flex; align-items:center; justify-content:center; color:var(--agent-paperclip); margin-bottom:14px; border:1px solid rgba(236,72,153,0.3);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px; height:18px;">
+        <div class="feature-bento-grid">
+          <div class="feature-bento-card">
+            <div class="feature-icon-squircle" style="background:rgba(255, 55, 95, 0.14); color:var(--agent-paperclip);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
                 <line x1="12" y1="6" x2="12" y2="18"></line>
               </svg>
             </div>
-            <h3 style="font-size:1.1rem; font-weight:600; color:var(--text-primary); margin-bottom:8px;">1. Market Scoring & PRD</h3>
-            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+            <h3>1. Market Scoring & PRD</h3>
+            <p>
               Paperclip AI continuously monitors developer APIs, SaaS churn signals, and unserved compliance niches, producing complete PRDs with quantifiable pricing models in minutes.
             </p>
           </div>
 
-          <div class="stat-card" style="padding:24px;">
-            <div style="width:36px; height:36px; border-radius:var(--radius-md); background:rgba(6, 182, 212, 0.15); display:flex; align-items:center; justify-content:center; color:var(--agent-hermes); margin-bottom:14px; border:1px solid rgba(6,182,212,0.3);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px; height:18px;">
+          <div class="feature-bento-card">
+            <div class="feature-icon-squircle" style="background:rgba(100, 210, 255, 0.14); color:var(--agent-hermes);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
                 <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                 <polyline points="2 17 12 22 22 17"></polyline>
               </svg>
             </div>
-            <h3 style="font-size:1.1rem; font-weight:600; color:var(--text-primary); margin-bottom:8px;">2. Protocol & Architecture</h3>
-            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+            <h3>2. Protocol & Architecture</h3>
+            <p>
               Hermes 3 translates PRDs into sub-5ms edge architecture, OpenAPI 3.1 specifications, database schemas, and tool calling definitions across multi-agent boundaries.
             </p>
           </div>
 
-          <div class="stat-card" style="padding:24px;">
-            <div style="width:36px; height:36px; border-radius:var(--radius-md); background:rgba(16, 185, 129, 0.15); display:flex; align-items:center; justify-content:center; color:var(--agent-dsh-qa); margin-bottom:14px; border:1px solid rgba(16,185,129,0.3);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px; height:18px;">
+          <div class="feature-bento-card">
+            <div class="feature-icon-squircle" style="background:rgba(48, 209, 88, 0.14); color:var(--agent-dsh-qa);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 <polyline points="9 12 11 14 15 10"></polyline>
               </svg>
             </div>
-            <h3 style="font-size:1.1rem; font-weight:600; color:var(--text-primary); margin-bottom:8px;">3. Synthesis & QA Gatekeeper</h3>
-            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+            <h3>3. Synthesis & QA Gatekeeper</h3>
+            <p>
               DSH Browser & PyLang write reactive UI and async services, while DSH Compiler & OS enforce zero-vulnerability AST proofs before deploying to edge clusters.
             </p>
           </div>

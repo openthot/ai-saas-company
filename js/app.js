@@ -8,6 +8,9 @@ import { initTerminal } from './terminal.js';
 import { initGenerator } from './generator.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Apple Theme Switcher
+  initThemeToggle();
+
   // Initialize Toast System
   initToastSystem();
 
@@ -26,8 +29,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dynamic Telemetry Stats Counter
   initStatsTicker();
 
-  console.log('%c ApexSaaS AI %c Autonomous Workforce Initialized ', 'background:#5e6ad2; color:#fff; font-weight:700; border-radius:3px 0 0 3px;', 'background:#1a1b1e; color:#707eff; border-radius:0 3px 3px 0;');
+  console.log('%c  ApexSaaS AI %c Apple Pro Design System Active ', 'background:#0071e3; color:#fff; font-weight:600; padding:3px 8px; border-radius:12px 0 0 12px;', 'background:#161617; color:#64d2ff; padding:3px 8px; border-radius:0 12px 12px 0;');
 });
+
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  const savedTheme = localStorage.getItem('apple_theme');
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
+
+  applyTheme(initialTheme);
+
+  toggleBtn.addEventListener('click', () => {
+    const isCurrentlyLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const nextTheme = isCurrentlyLight ? 'dark' : 'light';
+    applyTheme(nextTheme);
+    localStorage.setItem('apple_theme', nextTheme);
+    if (window.showToast) {
+      window.showToast(`Switched to Apple ${nextTheme === 'light' ? 'Light' : 'Pro Dark'} mode`, 'info');
+    }
+  });
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+}
 
 function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
