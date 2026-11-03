@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexSaaS AI — Autonomous Multi-Agent SaaS Company</title>
+  <meta name="description" content="Autonomous AI Agent SaaS Company powered by Paperclip AI, Hermes 3, and DSH Web agents. Designing, building, and deploying micro-SaaS products 24/7 with zero human intervention.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Header Navigation Bar -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand-wrapper">
+          <div class="brand-logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="brand-title">
+            <span>ApexSaaS AI</span>
+            <span class="brand-badge">Autonomous Swarm</span>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="main-nav" aria-label="Main Navigation">
+          <a href="#overview" class="nav-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+            </svg>
+            Overview
+          </a>
+          <a href="#org-chart" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            Agent Workforce
+          </a>
+          <a href="#pipeline" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            SaaS Pipeline
+          </a>
+          <a href="#terminal" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            Live Terminal
+          </a>
+          <a href="#generator" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generator Sandbox
+          </a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <div class="status-indicator-live">
+            <span class="live-dot"></span>
+            <span>Swarm: 4/4 Active</span>
+          </div>
+
+          <button class="cmd-k-trigger" id="cmd-k-btn" title="Open Quick Command Palette (Cmd+K)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search</span>
+            <span class="cmd-k-kbd">⌘K</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+
+      <!-- Hero Section -->
+      <section class="hero-section" id="overview">
+        <div class="hero-pill">
+          <span class="hero-pill-badge">v3.4.0 Engine</span>
+          <span>Zero Human Overhead &bull; 100% Autonomous SaaS Velocity</span>
+        </div>
+
+        <h1 class="hero-title">
+          The Autonomous AI SaaS Company That Never Sleeps.
+        </h1>
+
+        <p class="hero-subtitle">
+          ApexSaaS AI operates a persistent swarm of specialized AI agents: <strong>Paperclip AI</strong> orchestrates market strategy & token budgets, <strong>Hermes 3</strong> engineers schemas & distributed protocols, and <strong>DSH Web Agents</strong> implement frontend runtimes and compiler-verified QA.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#generator" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            Launch Autonomous Generator
+          </a>
+          <a href="#terminal" class="btn btn-secondary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            Watch Agent Stream
+          </a>
+        </div>
+
+        <!-- Telemetry Stats Ticker -->
+        <div class="telemetry-ticker">
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Autonomous Commits</span>
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+              </svg>
+            </div>
+            <div class="stat-value" id="stat-commits-val">1,352</div>
+            <div class="stat-subtext">
+              <span class="stat-trend-up">&uarr; 38 commits</span>
+              <span>last 2 hours</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Active Micro-SaaS</span>
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+              </svg>
+            </div>
+            <div class="stat-value" id="stat-saas-val">3 Live <span style="font-size:0.9rem; color:var(--text-tertiary);">+ 1 queued</span></div>
+            <div class="stat-subtext">
+              <span class="stat-trend-up">&uarr; 100%</span>
+              <span>uptime SLA</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Annual Recurring Rev</span>
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="stat-value" id="stat-arr-val">$184,700</div>
+            <div class="stat-subtext">
+              <span class="stat-trend-up">&uarr; 18.4%</span>
+              <span>MoM organic</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-label">Token Compute Margin</span>
+              <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div class="stat-value" id="stat-margin-val">98.6%</div>
+            <div class="stat-subtext">
+              <span class="stat-trend-up">$0.003</span>
+              <span>cost per unit</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Company Overview Pillars -->
+      <section class="content-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-eyebrow">
+              <span class="live-dot" style="width:6px; height:6px;"></span>
+              Autonomous Agency Protocol
+            </span>
+            <h2 class="section-title">How ApexSaaS AI Ships Software</h2>
+          </div>
+          <p class="section-desc">
+            A self-contained synthetic organization where software development, product discovery, and QA testing are transformed into continuous mathematical state loops.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+          <div class="stat-card" style="padding:24px;">
+            <div style="width:36px; height:36px; border-radius:var(--radius-md); background:rgba(236, 72, 153, 0.15); display:flex; align-items:center; justify-content:center; color:var(--agent-paperclip); margin-bottom:14px; border:1px solid rgba(236,72,153,0.3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px; height:18px;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                <line x1="12" y1="6" x2="12" y2="18"></line>
+              </svg>
+            </div>
+            <h3 style="font-size:1.1rem; font-weight:600; color:var(--text-primary); margin-bottom:8px;">1. Market Scoring & PRD</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+              Paperclip AI continuously monitors developer APIs, SaaS churn signals, and unserved compliance niches, producing complete PRDs with quantifiable pricing models in minutes.
+            </p>
+          </div>
+
+          <div class="stat-card" style="padding:24px;">
+            <div style="width:36px; height:36px; border-radius:var(--radius-md); background:rgba(6, 182, 212, 0.15); display:flex; align-items:center; justify-content:center; color:var(--agent-hermes); margin-bottom:14px; border:1px solid rgba(6,182,212,0.3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px; height:18px;">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-size:1.1rem; font-weight:600; color:var(--text-primary); margin-bottom:8px;">2. Protocol & Architecture</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+              Hermes 3 translates PRDs into sub-5ms edge architecture, OpenAPI 3.1 specifications, database schemas, and tool calling definitions across multi-agent boundaries.
+            </p>
+          </div>
+
+          <div class="stat-card" style="padding:24px;">
+            <div style="width:36px; height:36px; border-radius:var(--radius-md); background:rgba(16, 185, 129, 0.15); display:flex; align-items:center; justify-content:center; color:var(--agent-dsh-qa); margin-bottom:14px; border:1px solid rgba(16,185,129,0.3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px; height:18px;">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-size:1.1rem; font-weight:600; color:var(--text-primary); margin-bottom:8px;">3. Synthesis & QA Gatekeeper</h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+              DSH Browser & PyLang write reactive UI and async services, while DSH Compiler & OS enforce zero-vulnerability AST proofs before deploying to edge clusters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Agent Org Chart & Workforce -->
+      <section class="content-section" id="org-chart">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-eyebrow">Autonomous Workforce</span>
+            <h2 class="section-title">The Synthetic Executive Team</h2>
+          </div>
+          <p class="section-desc">
+            Four specialized agents collaborate autonomously via standardized tool calls and cognitive memory protocols. Click on any agent card to inspect their live neural dossier.
+          </p>
+        </div>
+
+        <div class="org-chart-wrapper">
+          <div class="agent-grid" id="agent-grid-container">
+            <!-- Dynamically populated by js/org-chart.js -->
+          </div>
+
+          <!-- Expanded Dossier Drawer -->
+          <div class="agent-dossier-drawer" id="agent-dossier-drawer"></div>
+        </div>
+      </section>
+
+      <!-- Section: Active SaaS Projects Kanban Pipeline -->
+      <section class="content-section" id="pipeline">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-eyebrow">Continuous Shipping</span>
+            <h2 class="section-title">Active SaaS Pipeline</h2>
+          </div>
+          <p class="section-desc">
+            Autonomous projects progressing through lifecycle stages from Market Fit to Global Edge Staging. Click any card for architecture blueprints and telemetry.
+          </p>
+        </div>
+
+        <div class="pipeline-container">
+          <div class="pipeline-toolbar">
+            <div class="pipeline-filter-tabs">
+              <button class="pipeline-tab-btn active" data-cat="all">All Products (3)</button>
+              <button class="pipeline-tab-btn" data-cat="Enterprise">Enterprise AI</button>
+              <button class="pipeline-tab-btn" data-cat="Developer">Developer Tooling</button>
+              <button class="pipeline-tab-btn" data-cat="Conversion">Conversion</button>
+            </div>
+
+            <div class="pipeline-stats-pill">
+              <span>Sprint Velocity: <strong>4.2 PRs / day</strong></span>
+              <span>&bull;</span>
+              <span>Human Overhead: <strong>$0.00</strong></span>
+            </div>
+          </div>
+
+          <!-- Kanban Board -->
+          <div class="kanban-board" id="kanban-board">
+            <!-- Dynamically populated by js/pipeline.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Live Agent Activity Terminal Stream -->
+      <section class="content-section" id="terminal">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-eyebrow">Real-Time Telemetry</span>
+            <h2 class="section-title">Live Agent Activity Terminal</h2>
+          </div>
+          <p class="section-desc">
+            Unfiltered stream of agent operations: tool invocations, PRD approvals, compiler checks, and edge deployments happening in real-time.
+          </p>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-left-controls">
+              <div class="terminal-window-dots">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="terminal-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+                <span>apex-agent-stream // tty-0</span>
+              </div>
+            </div>
+
+            <!-- Agent Filters -->
+            <div class="terminal-filters">
+              <button class="term-filter-btn active" data-filter="all">All Logs</button>
+              <button class="term-filter-btn" data-filter="paperclip">Paperclip</button>
+              <button class="term-filter-btn" data-filter="hermes">Hermes</button>
+              <button class="term-filter-btn" data-filter="dsh-dev">DSH Dev</button>
+              <button class="term-filter-btn" data-filter="dsh-qa">DSH QA</button>
+            </div>
+
+            <!-- Terminal Actions -->
+            <div class="terminal-actions">
+              <button class="btn btn-sm btn-secondary" id="term-pause-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+                Pause
+              </button>
+              <button class="btn btn-sm btn-outline" id="term-speed-btn">1x</button>
+              <button class="btn btn-sm btn-ghost" id="term-clear-btn" title="Clear terminal">Clear</button>
+              <button class="btn btn-sm btn-ghost" id="term-scroll-toggle" title="Toggle Auto-scroll">Scroll</button>
+            </div>
+          </div>
+
+          <!-- Monospace Terminal Log Body -->
+          <div class="terminal-body" id="terminal-body">
+            <!-- Dynamically populated by js/terminal.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Interactive SaaS Generator Sandbox -->
+      <section class="content-section" id="generator">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-eyebrow">Interactive Swarm Studio</span>
+            <h2 class="section-title">Autonomous SaaS Generator</h2>
+          </div>
+          <p class="section-desc">
+            Provide a micro-SaaS concept or select a market template. The agent swarm will collaboratively generate the PRD, architecture, full-stack code, security audit, and a live functional preview mockup.
+          </p>
+        </div>
+
+        <div class="sandbox-card">
+          <!-- Input Form Section -->
+          <div class="sandbox-form-section">
+            <div class="preset-ideas-row">
+              <span class="preset-label">Templates:</span>
+              <div id="preset-ideas-container" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+            </div>
+
+            <div class="sandbox-input-grid">
+              <div class="input-field-group">
+                <label class="field-label" for="gen-app-idea">
+                  Micro-SaaS Concept & Problem Statement
+                  <span class="field-label-hint">What should the swarm build?</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="gen-app-idea" 
+                  class="field-input" 
+                  placeholder="e.g. Autonomous vectorless legal contract & compliance checker for SOC-2 audits"
+                />
+              </div>
+
+              <div class="input-field-group">
+                <label class="field-label" for="gen-tech-stack">Target Tech Stack</label>
+                <select id="gen-tech-stack" class="field-select">
+                  <option value="next-fastapi">Next.js 15 + FastAPI (Python) + DuckDB</option>
+                  <option value="svelte-cf">SvelteKit + Cloudflare Workers + D1 SQLite</option>
+                  <option value="react-fastify">React 19 + Fastify (Node.js) + PostgreSQL</option>
+                  <option value="vue-hono">Vue 3 + Hono + ClickHouse Edge</option>
+                </select>
+              </div>
+
+              <div class="input-field-group">
+                <label class="field-label" for="gen-monetization">Monetization Model</label>
+                <select id="gen-monetization" class="field-select">
+                  <option value="tiered">Tiered Subscription ($29 / $99 / $299)</option>
+                  <option value="metered">Usage-Based Metered API ($0.002 / unit)</option>
+                  <option value="freemium">Freemium + Add-on Licenses</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="generator-action-row">
+              <div class="swarm-state-indicator">
+                <span class="live-dot" style="background:var(--agent-hermes);"></span>
+                <span>Swarm Readiness: 4/4 Specialized Agents Idle & Ready</span>
+              </div>
+
+              <button class="btn btn-primary btn-lg" id="btn-generate-saas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                Autonomously Deploy Swarm
+              </button>
+            </div>
+          </div>
+
+          <!-- Multi-Step Pipeline Stepper (Visible during/after generation) -->
+          <div class="generation-stepper" id="generation-stepper">
+            <div class="step-card" data-step="1">
+              <span class="step-num">1</span>
+              <div class="step-info">
+                <span class="step-name">Product PRD</span>
+                <span class="step-agent">Paperclip AI</span>
+              </div>
+            </div>
+
+            <div class="step-card" data-step="2">
+              <span class="step-num">2</span>
+              <div class="step-info">
+                <span class="step-name">Architecture</span>
+                <span class="step-agent">Hermes 3</span>
+              </div>
+            </div>
+
+            <div class="step-card" data-step="3">
+              <span class="step-num">3</span>
+              <div class="step-info">
+                <span class="step-name">Full-Stack Code</span>
+                <span class="step-agent">DSH Dev</span>
+              </div>
+            </div>
+
+            <div class="step-card" data-step="4">
+              <span class="step-num">4</span>
+              <div class="step-info">
+                <span class="step-name">Security & QA</span>
+                <span class="step-agent">DSH QA</span>
+              </div>
+            </div>
+
+            <div class="step-card" data-step="5">
+              <span class="step-num">5</span>
+              <div class="step-info">
+                <span class="step-name">Live Preview</span>
+                <span class="step-agent">Interactive Sandbox</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output Tabs & Panels -->
+          <div class="sandbox-output-wrap">
+            <div class="output-tabs-bar">
+              <div class="output-tabs-list">
+                <button class="output-tab-btn active" data-tab="mockup">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-dsh-qa);">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                  </svg>
+                  Interactive Live Mockup
+                </button>
+                <button class="output-tab-btn" data-tab="prd">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-paperclip);">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                  PRD & Pricing
+                </button>
+                <button class="output-tab-btn" data-tab="arch">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-hermes);">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  </svg>
+                  System Architecture
+                </button>
+                <button class="output-tab-btn" data-tab="code">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-dsh-dev);">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  Production Code
+                </button>
+                <button class="output-tab-btn" data-tab="qa">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px; height:14px; color:var(--agent-dsh-qa);">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  Security Audit (100%)
+                </button>
+              </div>
+
+              <div class="output-actions-list">
+                <button class="btn btn-sm btn-secondary" id="btn-export-spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px; height:13px;">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Export Package (JSON)
+                </button>
+              </div>
+            </div>
+
+            <div class="output-panel-content">
+              <div class="output-tab-pane active" id="pane-mockup">
+                <!-- Dynamically populated by js/generator.js -->
+              </div>
+              <div class="output-tab-pane" id="pane-prd"></div>
+              <div class="output-tab-pane" id="pane-arch"></div>
+              <div class="output-tab-pane" id="pane-code"></div>
+              <div class="output-tab-pane" id="pane-qa"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand-info">
+            <div class="brand-wrapper">
+              <div class="brand-logo-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div class="brand-title">
+                <span>ApexSaaS AI</span>
+              </div>
+            </div>
+            <p class="footer-tagline">
+              First autonomous AI SaaS enterprise operating on zero human intervention. Real products, real revenue, continuous regression-proof deployment.
+            </p>
+          </div>
+
+          <div class="footer-tech-stack">
+            <div class="footer-tech-item">
+              <span class="footer-tech-dot" style="background:var(--agent-paperclip);"></span>
+              <span>Paperclip AI</span>
+            </div>
+            <div class="footer-tech-item">
+              <span class="footer-tech-dot" style="background:var(--agent-hermes);"></span>
+              <span>Hermes 3</span>
+            </div>
+            <div class="footer-tech-item">
+              <span class="footer-tech-dot" style="background:var(--agent-dsh-dev);"></span>
+              <span>DSH Browser / PyLang</span>
+            </div>
+            <div class="footer-tech-item">
+              <span class="footer-tech-dot" style="background:var(--agent-dsh-qa);"></span>
+              <span>DSH Compiler OS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; 2026 ApexSaaS AI Corporation. Autonomous Swarm Protocol v3.4.</span>
+          <span>GitHub Pages Compatible &bull; Zero External Runtime Dependencies</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Project Details Modal Backdrop -->
+    <div class="modal-backdrop" id="project-modal"></div>
+
+    <!-- Command Palette (Cmd+K) Modal -->
+    <div class="modal-backdrop" id="cmd-palette-modal">
+      <div class="modal-dialog cmd-palette-dialog">
+        <input 
+          type="text" 
+          id="cmd-search-input" 
+          class="cmd-search-input" 
+          placeholder="Type a command or jump to section... (Esc to close)"
+        />
+        <div class="cmd-results-list" id="cmd-items-container">
+          <!-- Populated by js/app.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+  </div>
+
+  <!-- Main ES Module Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
